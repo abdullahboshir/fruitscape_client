@@ -33,6 +33,9 @@ export function Header() {
         {/* Right: Navigation */}
         <nav className="flex-shrink-0 flex gap-5 items-center">
           <Link href="/shop" className="text-sm font-medium hover:text-primary">
+            Dashboard
+          </Link>
+          <Link href="/shop" className="text-sm font-medium hover:text-primary">
             Shop
           </Link>
           <Link href="/about" className="text-sm font-medium hover:text-primary">

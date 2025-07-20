@@ -4,12 +4,34 @@ import heroImg3 from "../../../public/images/hero/hero-img3.png";
 import cardImg1 from "../../../public/images/card/card-img1.png";
 import cardImg2 from "../../../public/images/card/card-img2.png";
 import cardImg3 from "../../../public/images/card/card-img3.png";
+import cardImg4 from "../../../public/images/card/card-img4.png";
+import cardImg5 from "../../../public/images/card/card-img5.png";
+import cardImg6 from "../../../public/images/card/card-coconut.png";
+import cardImg7 from "../../../public/images/card/card-apple2.png";
 import { OfferCard } from "@/components/cards/OfferCard";
 import ProductCard from "@/components/cards/ProductCard";
 
 const products = [
+      {
+    imageSrc: cardImg4.src,
+    name: "Mangoes",
+    description: "Delicious summer mangoes, naturally ripened.",
+    price: "৳ 150/kg",
+  },
   {
-    imageSrc: cardImg1.src,
+    imageSrc: cardImg5.src,
+    name: "Mangoes",
+    description: "Delicious summer mangoes, naturally ripened.",
+    price: "৳ 150/kg",
+  },
+  {
+    imageSrc: cardImg6.src,
+    name: "Mangoes",
+    description: "Delicious summer mangoes, naturally ripened.",
+    price: "৳ 150/kg",
+  },
+  {
+    imageSrc: cardImg7.src,
     name: "Ripe Bananas",
     description: "Sweet and fresh bananas from local farms.",
     price: "৳ 80/kg",
@@ -25,7 +47,7 @@ const products = [
     name: "Mangoes",
     description: "Delicious summer mangoes, naturally ripened.",
     price: "৳ 150/kg",
-  },
+  }
 ];
 
 const HomePage = () => {
