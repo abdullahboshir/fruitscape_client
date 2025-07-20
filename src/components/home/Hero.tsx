@@ -1,13 +1,14 @@
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+'use client';
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ThemeModeToggle } from "../shared/ThemeModeToggle";
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Header } from '../layout/Header';
 
 interface HeroProps {
   badge?: string;
   heading: string;
-  description: string;
+  description?: string;
   buttons?: {
     primary?: {
       text: string;
@@ -24,70 +25,63 @@ interface HeroProps {
   };
 }
 
-
-
-const Hero = ({
-  badge = "✨ Your Website Builder",
-  heading = "Blocks Built With Shadcn & Tailwind",
-  description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
-  buttons = {
-    primary: {
-      text: "Discover all components",
-      url: "https://www.shadcnblocks.com",
-    },
-    secondary: {
-      text: "View on GitHub",
-      url: "https://www.shadcnblocks.com",
-    },
-  },
-  image = {
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
-    alt: "Hero section demo image showing interface components",
-  },
-}: HeroProps) => {
+export function Hero({ badge, heading, description, buttons, image }: HeroProps) {
   return (
-    <section className="py-32 bg-green-300">
-      <div className="container">
-           {/* <ThemeModeToggle/> */}
-        <div className="grid items-center gap-8 lg:grid-cols-2">
-          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-            {badge && (
-              <Badge variant="outline">
-                {badge}
-                <ArrowUpRight className="ml-2 size-4" />
-              </Badge>
-            )}
-            <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl">
-              {heading}
-            </h1>
-            <p className="text-muted-foreground mb-8 max-w-xl lg:text-xl">
-              {description}
-            </p>
-            <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
+    <section className="w-full px-4 py-16 md:px-10 lg:py-8 overflow-hidden relative">
+<Header/> 
+
+     <div className="absolute scale-120 right-0 w-[54%] h-[55%] bg-lime-500 rounded-full opacity-20 blur-3xl z-0"></div>
+
+
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 md:grid-cols-2 mt-16">
+        {/* Left Text Section */}
+        <div className="space-y-6">
+          {badge && (
+            <Badge className="bg-lime-400 text-white text-sm px-3 py-1 rounded-full">
+              {badge}
+            </Badge>
+          )}
+
+          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+            {heading}
+          </h1>
+
+          {description && (
+            <p className="text-lg text-gray-600">{description}</p>
+          )}
+
+          {(buttons?.primary || buttons?.secondary) && (
+            <div className="flex flex-wrap gap-4">
               {buttons.primary && (
-                <Button asChild className="w-full sm:w-auto">
+                <Button asChild className="bg-lime-500 hover:bg-lime-600 text-white">
                   <a href={buttons.primary.url}>{buttons.primary.text}</a>
                 </Button>
               )}
               {buttons.secondary && (
-                <Button asChild variant="outline" className="w-full sm:w-auto">
-                  <a href={buttons.secondary.url}>
-                    {buttons.secondary.text}
-                    <ArrowRight className="size-4" />
-                  </a>
+                <Button asChild variant="outline">
+                  <a href={buttons.secondary.url}>{buttons.secondary.text}</a>
                 </Button>
               )}
             </div>
-          </div>
-          <img
+          )}
+        </div>
+
+        {/* Right Image Section with Lime Background */}
+        <div className="relative w-full flex justify-center items-center">
+          {/* Lime background blob */}
+
+     
+
+          {/* Guava image or any fruit/veg image */}
+          <Image
             src={image.src}
             alt={image.alt}
-            className="max-h-96 w-full rounded-md object-cover"
+            width={600}
+            height={600}
+            className="relative z-10 max-h-96 w-full rounded-md object-cover"
           />
         </div>
       </div>
     </section>
   );
-};
-
-export { Hero };
+}
