@@ -1,4 +1,5 @@
 export enum tagTypes {
+  auth= 'auth',
   superAdmin = "superAdmin",
   admin = "admin",
   manager = "manager",

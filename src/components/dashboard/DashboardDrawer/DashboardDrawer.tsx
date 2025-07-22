@@ -42,7 +42,7 @@ export default function DashboardDrawer({
 
   return (
     <div className="flex min-h-screen bg-muted">
-      
+
       {/* ========== Sidebar ========== */}
       <div className="hidden sm:flex flex-col w-[240px] border-r min-h-screen bg-white">
         <SideBar />
@@ -67,11 +67,12 @@ export default function DashboardDrawer({
 
       {/* ========== Main Content ========== */}
       <div
-        className="flex-1 p-4 sm:pl-6"
+        className="flex-1"
         style={{ width: `calc(100% - ${drawerWidth}px)` }}
       >
+        
         {/* ========== Topbar ========== */}
-        <div className="flex items-center justify-between bg-white p-4 rounded-md shadow-sm border mb-4">
+        <div className="flex items-center justify-between bg-white p-4 shadow-sm border-b mb-4">
           <div>
             <p className="text-sm text-muted-foreground">
               Hey, {'data?.fullName'}
@@ -98,6 +99,7 @@ export default function DashboardDrawer({
                 </Button>
               </Link>
             )}
+
 
             {/* Avatar and Account */}
             <div className="flex items-center gap-2">
